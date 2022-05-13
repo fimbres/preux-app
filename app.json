@@ -20,8 +20,9 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "www.fimbrestech.com/preux",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#FFFFFF"
       }
     },
