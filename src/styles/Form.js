@@ -11,7 +11,7 @@ const formStyles = StyleSheet.create({
         borderColor: Colors.black,
         borderStyle: "solid",
         borderWidth: 3,
-        borderRadius: 10
+        borderRadius: 10,
     },
     inputDate: {
         width: "34%",

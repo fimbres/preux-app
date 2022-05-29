@@ -7,7 +7,7 @@ import { deleteProductCartAPI, increaseProductCartAPI, decreaseProductCartAPI } 
 
 export default function Product(props) {
     const { product, setReloadCart } = props;
-    console.log(product);
+    console.log("producto: ", product);
     const calcPrice = (price, discount) => {
         if(!discount) return price;
         const discountAmount = (price * discount) / 100;
@@ -41,6 +41,7 @@ export default function Product(props) {
                     <Text style={styles.currentPrice}>{calcPrice(product.price, product.discount)} USD</Text>
                     {product.discount && (<Text style={styles.oldPrice}>{product.price} USD</Text>)}
               </View>
+                <Text style={styles.currentPrice}>Size: {product.sizes}</Text>
           </View>
           <View style={styles.btnContainer}>
             <View style={styles.selectQuantity}>

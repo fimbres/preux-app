@@ -2,28 +2,29 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Dropdown } from 'react-native-material-dropdown-v2-fixed';
 
-export default function Quantity(props) {
-    const {quantity, setQuantity} = props;
+export default function Size(props) {
+    const {size, setSize} = props;
     const items = [
-        {label: '1', value: 1},
-        {label: '2', value: 2},
-        {label: '3', value: 3},
-        {label: '4', value: 4},
+        {label: 'Extra Small', value: "XS"},
+        {label: 'Small', value: "SM"},
+        {label: 'Medium', value: "M"},
+        {label: 'Large', value: "L"},
+        {label: 'Extra Large', value: "XL"},
     ];
 
   return (
-    <View style={{ zIndex: 3 }}>
+    <View style={{ zIndex: 2 }}>
         <Dropdown
             data={items}
             useNativeDriver={false}
-            value={quantity}
+            value={size}
             containerStyle={styles.container}
             itemStyle={styles.item}
             dropdownStyle={styles.dropdown}
             style={styles.dropdown}
             labelStyle={styles.label}
-            onChangeText={(value) => setQuantity(value)}
-            label="Select Quantity"
+            onChangeText={(value) => setSize(value)}
+            label="Select Size"
         />
     </View>
   );

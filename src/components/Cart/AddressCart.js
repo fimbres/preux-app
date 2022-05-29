@@ -16,8 +16,8 @@ export default function AddressCart(props) {
       <Text style={styles.containerTitle}>Shipping addresses</Text>
       {!addresses ? <LoadingScreen /> : 
       <>
-        {map(addresses, (address) => (
-            <TouchableWithoutFeedback key={address._id} onPress={() => setSelectedAddress(address)}>
+        {map(addresses, (address, id) => (
+            <TouchableWithoutFeedback key={id} onPress={() => setSelectedAddress(address)}>
                 <View style={[address._id == selectedAddress?._id ? styles.selected : styles.address]}>
                     <Text style={styles.title}>{address.title}</Text>
                     <Text>{address.name_lastname}</Text>

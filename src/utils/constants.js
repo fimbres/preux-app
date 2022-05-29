@@ -1,4 +1,4 @@
-export const API_URL = 'http://192.168.68.120:1337';
+export const API_URL = 'http://192.168.68.122:1337';
 export const TOKEN = "token";
 export const STRIPE_PUBLISH_KEY = "pk_test_51KQ3KTC10676WVeUhj6LC5rvMvp7XemoMzMibQgbovPz412tXgzrodrSMnrIyKAKodHoVJTUITCUMJ0HXT8DY88k0025XCk34L";
 export const STRIPE_SECRET_KEY = "sk_test_51KQ3KTC10676WVeU5ctm7RFBchymOCQO8CZGaOWzcYe9VpWywMzZxxJgHxQHM1gC9F68XGKdPwiLK6PaOWZdknu200Giy8bRUn";

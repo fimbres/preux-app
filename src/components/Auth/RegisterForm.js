@@ -9,7 +9,7 @@ import Toast from "react-native-root-toast";
 
 export default function RegisterForm(props){
     const { changeForm } = props;
-    const { loading, setLoading } = useState(false);
+    const [ loading, setLoading ] = useState(false);
 
     const formik = useFormik({
         initialValues: initialValues(),

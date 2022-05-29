@@ -7,6 +7,7 @@ import Colors from '../styles/Colors';
 import CarousselImages from '../components/Products/CarousselImages';
 import Price from '../components/Products/Price';
 import Quantity from '../components/Products/Quantity';
+import Size from '../components/Products/Size';
 import Buy from '../components/Products/Buy';
 import Favorite from '../components/Products/Favorite';
 
@@ -15,6 +16,7 @@ export default function product(props) {
     const [ product, setProduct ] = useState(null);
     const [ images, setImages ] = useState([]);
     const [ quantity, setQuantity ] = useState(1);
+    const [ size, setSize ] = useState("");
     useEffect(() => {
         setProduct(null);
         (async () => {
@@ -25,7 +27,6 @@ export default function product(props) {
             setImages(ImagesArray);
         })();
     }, [params]);
-
   return (
     <>
     <StatusBarCustom BackgroundColor={Colors.black} barStyle="light-content"/>
@@ -36,8 +37,9 @@ export default function product(props) {
         <View style={styles.containerView}>
             <Price price={product.price} discount={product.discount}/>
             <Quantity quantity={quantity} setQuantity={setQuantity}/>
+            <Size size={size} setSize={setSize}/>
             <Favorite product={product}/>
-            <Buy quantity={quantity} product={product}/>
+            <Buy quantity={quantity} size={size} product={product}/>
         </View>
     </ScrollView>
     }

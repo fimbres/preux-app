@@ -5,9 +5,9 @@ import { addProductCartAPI } from '../../api/cart';
 import Toast from 'react-native-root-toast';
 
 export default function Buy(props) {
-    const { product, quantity } = props;
+    const { product, quantity, size } = props;
     const addProduct = async () => {
-        const response = await addProductCartAPI(product._id, quantity);
+        const response = await addProductCartAPI(product._id, quantity, size);
         if(response){
             Toast.show("The product was added successfully",
              {position: Toast.positions.CENTER});
@@ -19,9 +19,7 @@ export default function Buy(props) {
     };
 
   return (
-      <View style={{ zIndex: 1 }}>
-          <Button contentStyle={styles.btnBuy} mode="contained" labelStyle={styles.btnLabel} style={styles.btn} onPress={() => addProduct()}>Add to my cart</Button>
-      </View>
+    <Button contentStyle={styles.btnBuy} mode="contained" labelStyle={styles.btnLabel} style={styles.btn} onPress={() => addProduct()}>Add to my cart</Button>
   );
 }
 

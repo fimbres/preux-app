@@ -13,7 +13,7 @@ export default function Auth() {
     <View style = {LayoutStyle.container}>
         <Image style={styles.logo} source={logo} />
         <Text style={styles.textLogo}> Dress like your rule the world. </Text>
-          {showLogin ? <LoginForm changeForm={changeForm}/> : <RegisterForm changeForm={changeForm}/> }
+          {showLogin ? <LoginForm changeForm={changeForm}/> : <RegisterForm changeForm={changeForm}/>}
     </View>
   );
 }

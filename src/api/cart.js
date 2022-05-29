@@ -13,20 +13,22 @@ export async function getProductCartAPI(){
     }
 }
 
-export async function addProductCartAPI(idProduct, quantity){
+export async function addProductCartAPI(idProduct, quantity, sizes){
     try {
         const cart = await getProductCartAPI();
         if(!cart) throw "Something went wrong";
         if(size(cart) == 0){
             cart.push({
                 idProduct,
-                quantity
+                quantity,
+                sizes
             });
+            console.log("llegó el size", sizes);
         }
         else{
             let found =  false;
             map(cart, (product) => {
-                if(idProduct == product.idProduct){
+                if(idProduct == product.idProduct && sizes == product.sizes){
                     product.quantity += quantity;
                     found = true;
                     return product;
@@ -35,7 +37,8 @@ export async function addProductCartAPI(idProduct, quantity){
             if(!found){
                 cart.push({
                     idProduct,
-                    quantity
+                    quantity,
+                    sizes
                 });
             }
         }

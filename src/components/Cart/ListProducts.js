@@ -15,8 +15,8 @@ export default function ListProducts(props) {
             let totalPaymentTemp = 0;
             for await (const product of products) {
                 const response = await getProduct(product.idProduct);
-                console.log(product.quantity);
                 response.quantity = product?.quantity;
+                response.sizes = product?.sizes;
                 productTemp.push(response);
 
                 totalPaymentTemp += ((calcPrice(response.price, response.discount) * response.quantity).toFixed(2)) * 1;
@@ -35,8 +35,8 @@ export default function ListProducts(props) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>My Cart</Text>
-      {!productsG ? <ScreenLoading/> : map(productsG, (product) => (
-          <Product key={product._id} product={product} setReloadCart={setReloadCart}/>
+      {!productsG ? <ScreenLoading/> : map(productsG, (product, id) => (
+          <Product key={id} product={product} setReloadCart={setReloadCart}/>
       ))}
     </View>
   );

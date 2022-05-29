@@ -24,6 +24,7 @@ export default function LoginForm(props) {
                     throw "Wrong credentials.";
                 }
                 else{
+                    console.log("todo bien");
                     login(response);
                 }
             }
@@ -39,8 +40,8 @@ export default function LoginForm(props) {
     return (
         <View>
             <TextInput label="Email or Username" activeUnderlineColor="#000000" style={formStyles.input} onChangeText={(text) => formik.setFieldValue("identifier", text)} value={formik.values.identifier} error={formik.errors.identifier}/>
-            <TextInput label="Password" activeUnderlineColor="#000000" style={formStyles.input} onChangeText={(text) => formik.setFieldValue("password", text)} value={formik.values.password} error={formik.errors.password}/>
-            <Button mode="contained" style={formStyles.btn} secureTextEntry onPress={formik.handleSubmit} loading={loading}>Log In</Button>
+            <TextInput label="Password" activeUnderlineColor="#000000" secureTextEntry style={formStyles.input} onChangeText={(text) => formik.setFieldValue("password", text)} value={formik.values.password} error={formik.errors.password}/>
+            <Button mode="contained" style={formStyles.btn} onPress={formik.handleSubmit} loading={loading}>Log In</Button>
             <Button mode="text" color="#000000" style={formStyles.textBtn} onPress={changeForm}>Sign Up</Button>
         </View>
     );
